@@ -1,15 +1,21 @@
 <?php
 namespace App\Http\Middleware;
-
 use Closure;
-use Exception;
-use App\Models\User;
 use Firebase\JWT\JWT;
-use Firebase\JWT\ExpiredException;
+use Illuminate\Http\Request;
+use App\Models\User;
 
-class JwtMiddleware
-{
-    public function handle($request, Closure $next, $guard = null)
+
+class AuthMiddleware {
+
+    /**
+     * Run the request filter.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
     {
         $token = $request->header('Authorization');
 
@@ -30,15 +36,26 @@ class JwtMiddleware
             ], 400);
         }
         $user = User::find($credentials->sub);
-        if ($user->id == 3) {
-            $request->auth = $user;
-            return $next($request);
-        }
-        else{
-            return response()->json([
-                'error' => 'Unauthorized.'
-            ], 400);
-        }
+        if (($request->route()[2]['id']) == $user->id) {
+        $request->auth = $user;
+        return $next($request);
+    }
+    else{
+        return response()->json([
+            'error' => 'Unauthorized access'
+        ], 400);
+    }
+
 
     }
 }
+
+
+
+/**
+ * Created by PhpStorm.
+ * User: basemeraphiona
+ * Date: 28/08/2018
+ * Time: 21:44
+ */
+

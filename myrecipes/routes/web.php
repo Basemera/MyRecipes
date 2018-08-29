@@ -19,6 +19,22 @@ $router->group(['prefix'=>'/myrecipes'], function () use ($router) {
     $router->post('/user', 'UsersController@createUser');
     $router->get('/user', 'UsersController@getAllUsers');
     $router->get('/user/{id}', 'UsersController@getSingleUser');
+    $router->put('/user/{id}', 'UsersController@update');
     $router->delete('/user/{id}', 'UsersController@deleteUser');
     $router->post('/login', 'UsersController@logIn');
 });
+
+$router->group(['prefix'=>'/myrecipes', 'middleware' => 'admin.auth'], function () use ($router) {
+    $router->get('/user', 'UsersController@getAllUsers');
+    $router->get('/user/{id}', 'UsersController@getSingleUser');
+    $router->put('/user/{id}', 'UsersController@update');
+    $router->delete('/user/{id}', 'UsersController@deleteUser');
+});
+
+$router->group(['prefix'=>'/myrecipes/user/{id}', 'middleware' => 'auth'], function () use ($router) {
+    $router->post('/category', 'AddCategoryController@addCategory');
+//    $router->get('/user/{id}', 'UsersController@getSingleUser');
+//    $router->put('/user/{id}', 'UsersController@update');
+//    $router->delete('/user/{id}', 'UsersController@deleteUser');
+});
+

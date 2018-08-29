@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/container" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/console" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/bus" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/pagination" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/cache" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/composer" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/auth" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/cookie" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/hashing" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/session" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/filesystem" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/pipeline" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/broadcasting" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/view" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/database" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/translation" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/encryption" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/danielstjules/stringy" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/config" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/http" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/queue" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/validation" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/illuminate/events" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/nikic/fast-route" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/mtdowling/cron-expression" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/laravel/lumen-framework" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/myRecipes/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/illuminate/log" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/myrecipes/vendor/phar-io/manifest" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings load_method="CUSTOM_LOADER" custom_loader_path="$PROJECT_DIR$/myRecipes/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
+</project>

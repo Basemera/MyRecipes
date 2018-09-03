@@ -22,6 +22,7 @@ $router->group(['prefix'=>'/myrecipes'], function () use ($router) {
     $router->put('/user/{id}', 'UsersController@update');
     $router->delete('/user/{id}', 'UsersController@deleteUser');
     $router->post('/login', 'UsersController@logIn');
+    $router->get('/user/{id}/categories', 'UsersController@getUserCategories');
 });
 
 $router->group(['prefix'=>'/myrecipes', 'middleware' => 'admin.auth'], function () use ($router) {
@@ -32,9 +33,11 @@ $router->group(['prefix'=>'/myrecipes', 'middleware' => 'admin.auth'], function 
 });
 
 $router->group(['prefix'=>'/myrecipes/user/{id}', 'middleware' => 'auth'], function () use ($router) {
-    $router->post('/category', 'AddCategoryController@addCategory');
-//    $router->get('/user/{id}', 'UsersController@getSingleUser');
-//    $router->put('/user/{id}', 'UsersController@update');
-//    $router->delete('/user/{id}', 'UsersController@deleteUser');
+    $router->post('/category', 'CategoryController@addCategory');
+    $router->get('/category/user/{user_id}', 'CategoryController@getUser');
+    $router->get('/category', 'CategoryController@getAllUserCategories');
+    $router->get('/category/{category_id}', 'CategoryController@getSingleCategory');
+    $router->put('/category/{category_id}', 'CategoryController@editCategory');
+    $router->delete('/category/{category_id}', 'CategoryController@deleteCategory');
 });
 

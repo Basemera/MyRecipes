@@ -123,6 +123,10 @@ class UsersController extends Controller {
 
         return $this->authenticate($request);
     }
+
+    public function getUserCategories($id) {
+        return User::find($id)->categories;
+    }
 }
 
 ?>

@@ -18,7 +18,7 @@ class User extends Model
     /**
      * Create a new token.
      *
-     * @param  \App\Models\User   $user
+     * @param \App\Models\User $user
      * @return string
      */
     static function jwt(User $user) {
@@ -32,6 +32,15 @@ class User extends Model
         // As you can see we are passing `JWT_SECRET` as the second parameter that will
         // be used to decode the token in the future.
         return JWT::encode($payload, env('JWT_SECRET'));
+    }
+
+    /**
+     * Method to return the user's categories
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasmany
+     */
+    public function categories() {
+        return $this->hasMany('App\Models\Category');
     }
 
 }

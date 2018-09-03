@@ -92,4 +92,8 @@ class CategoryController extends Controller {
         $category->delete();
         return response()->json($category->name.'successfully deleted', 200);
     }
+
+    public function getAllCategoryRecipes($category_id) {
+        return Category::find($category_id)->recipes;
+    }
 }

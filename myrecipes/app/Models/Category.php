@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Validator;
 
 class Category extends Model {
@@ -32,5 +31,13 @@ class Category extends Model {
         return $query->where('user_id', $user_id);
     }
 
+    /**
+     * Method to return the categories' recipes
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasmany
+     */
+    public function recipes() {
+        return $this->hasMany('App\Models\Recipes');
+    }
 
 }

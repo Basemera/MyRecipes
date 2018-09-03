@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Categories extends Migration
+class Recipes extends Migration
 {
     /**
      * Run the migrations.
@@ -16,14 +16,14 @@ class Categories extends Migration
         Schema::create(/**
          * @param Blueprint $table
          */
-            'categories', function (Blueprint $table) {
+            'recipes', function (Blueprint $table) {
             $table->increments('id');
             $table->char('name', 100)->unique();
             $table->text('description')->nullable();
-            $table->integer('user_id')->unsigned();
+            $table->integer('category_id')->unsigned();
             $table->timestamps();
-            $table->foreign('user_id')
-                ->references('id')->on('users')
+            $table->foreign('category_id')
+                ->references('id')->on('categories')
                 ->onDelete('cascade');
         });
     }
@@ -35,6 +35,6 @@ class Categories extends Migration
      */
     public function down()
     {
-        Schema::drop('categories');
+        Schema::drop('recipes');
     }
 }

@@ -47,7 +47,7 @@ class CategoryController extends Controller {
      * @return \Illuminate\Http\JsonResponse Array of all categories associated with a user
      */
     public function getAllUserCategories($user_id) {
-        $categories = Category::UserCategories($user_id)->get();
+        $categories = Category::where('user_id',$user_id)->first();
         return response()->json($categories, 200);
     }
 
@@ -93,7 +93,15 @@ class CategoryController extends Controller {
         return response()->json($category->name.'successfully deleted', 200);
     }
 
+    public function getCurrentUser($route_id, $user_id) {
+        if ($route_id == $user_id) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     public function getAllCategoryRecipes($category_id) {
+
         return Category::find($category_id)->recipes;
     }
 }

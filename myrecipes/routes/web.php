@@ -17,12 +17,12 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix'=>'/myrecipes'], function () use ($router) {
     $router->post('/user', 'UsersController@createUser');
-//    $router->get('/user', 'UsersController@getAllUsers');
-//    $router->get('/user/{id}', 'UsersController@getSingleUser');
-//    $router->put('/user/{id}', 'UsersController@update');
-//    $router->delete('/user/{id}', 'UsersController@deleteUser');
     $router->post('/login', 'UsersController@logIn');
     $router->get('/user/{id}/categories', 'UsersController@getUserCategories');
+    $router->get('/user/{id}/category', 'CategoryController@getAllUserCategories');
+    $router->get('/user/{id}/category/{category_id}', 'CategoryController@getSingleCategory');
+    $router->get('/user/{id}/category/{category_id}/recipes', 'CategoryController@getAllCategoryRecipes');
+    $router->get('/user/{id}/category/{category_id}/recipes/{recipe_id}', 'RecipesController@getSingleRecipe');
 });
 
 $router->group(['prefix'=>'/myrecipes', 'middleware' => 'admin.auth'], function () use ($router) {
@@ -35,16 +35,12 @@ $router->group(['prefix'=>'/myrecipes', 'middleware' => 'admin.auth'], function 
 $router->group(['prefix'=>'/myrecipes/user/{id}', 'middleware' => 'auth'], function () use ($router) {
     $router->post('/category', 'CategoryController@addCategory');
     $router->get('/category/user/{user_id}', 'CategoryController@getUser');
-    $router->get('/category', 'CategoryController@getAllUserCategories');
-    $router->get('/category/{category_id}', 'CategoryController@getSingleCategory');
     $router->put('/category/{category_id}', 'CategoryController@editCategory');
     $router->delete('/category/{category_id}', 'CategoryController@deleteCategory');
 });
 
 $router->group(['prefix'=>'/myrecipes/user/{id}/category/{category_id}/recipes', 'middleware' => 'auth'], function () use ($router) {
     $router->post('/', 'RecipesController@addRecipe');
-    $router->get('/', 'CategoryController@getAllCategoryRecipes');
-    $router->get('/{recipe_id}', 'RecipesController@getSingleRecipe');
     $router->put('/{recipe_id}', 'RecipesController@edit');
     $router->delete('/{recipe_id}', 'RecipesController@delete');
 });

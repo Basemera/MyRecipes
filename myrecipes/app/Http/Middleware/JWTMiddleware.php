@@ -30,7 +30,12 @@ class JwtMiddleware
             ], 400);
         }
         $user = User::find($credentials->sub);
-        if ($user->id == 3) {
+        if(!$user) {
+            return response()->json([
+                'error' => 'User doesnot exist.'
+            ], 400);
+        }
+        if ($user->username == 'Phiona') {
             $request->auth = $user;
             return $next($request);
         }

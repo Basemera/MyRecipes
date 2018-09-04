@@ -1,7 +1,6 @@
 <?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Validator;
 use App\Models\User;
 use Firebase\JWT\JWT;
@@ -22,6 +21,9 @@ class User extends Model
      * @return string
      */
     static function jwt(User $user) {
+        if (!$user->id) {
+            return "user doesnot exist";
+        }
         $payload = [
             'iss' => "lumen-jwt",
             'sub' => $user->id,

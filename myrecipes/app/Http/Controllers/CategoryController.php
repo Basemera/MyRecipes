@@ -57,8 +57,8 @@ class CategoryController extends Controller {
      * @param $category_id
      * @return \Illuminate\Http\JsonResponse Object of a single category's detail
      */
-    public function getSingleCategory($id, $category_id) {
-        $category = Category::UserCategories($id)->where('id', $category_id)->get();
+    public function getSingleCategory($category_id) {
+        $category = Category::where('id', $category_id)->get();
         return response()->json($category, 200);
     }
 

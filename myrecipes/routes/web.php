@@ -15,14 +15,21 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->group(['prefix'=>'/myrecipes'], function () use ($router) {
+
+$router->group(['prefix'=>'/myrecipes',], function () use ($router) {
     $router->post('/user', 'UsersController@createUser');
     $router->post('/login', 'UsersController@logIn');
+});
+$router->group(['prefix'=>'/myrecipes', 'middleware' => 'allUsers'], function () use ($router) {
     $router->get('/user/{id}/categories', 'UsersController@getUserCategories');
     $router->get('/user/{id}/category', 'CategoryController@getAllUserCategories');
     $router->get('/user/{id}/category/{category_id}', 'CategoryController@getSingleCategory');
     $router->get('/user/{id}/category/{category_id}/recipes', 'CategoryController@getAllCategoryRecipes');
     $router->get('/user/{id}/category/{category_id}/recipes/{recipe_id}', 'RecipesController@getSingleRecipe');
+    $router->post('/user/{id}/category/{category_id}/recipes/{recipe_id}/comments', 'CommentsController@add');
+    $router->get('/user/{id}/category/{category_id}/recipes/{recipe_id}/comments', 'CommentsController@view');
+    $router->get('/user/{id}/category/{category_id}/recipes/{recipe_id}/comments/{comment_id}', 'CommentsController@viewSingleComment');
+
 });
 
 $router->group(['prefix'=>'/myrecipes', 'middleware' => 'admin.auth'], function () use ($router) {
@@ -45,3 +52,7 @@ $router->group(['prefix'=>'/myrecipes/user/{id}/category/{category_id}/recipes',
     $router->delete('/{recipe_id}', 'RecipesController@delete');
 });
 
+$router->group(['prefix'=>'/myrecipes/user/{id}/category/{category_id}/recipes/{recipe_id}/comments', 'middleware' => 'auth'], function () use ($router) {
+    $router->put('/{comment_id}', 'CommentsController@edit');
+    $router->delete('/{comment_id}', 'CommentsController@delete');
+});

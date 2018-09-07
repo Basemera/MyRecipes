@@ -74,7 +74,7 @@ class RecipesController extends Controller {
      * @return \Illuminate\Http\JsonResponse
      */
     public function getSingleRecipe($category_id, $recipe_id) {
-        $recipe = Recipes::CategoryRecipes($category_id)->findorFail($recipe_id);
+        $recipe = Recipes::findorFail($recipe_id);
         return response()->json($recipe, 200);
     }
 }

@@ -67,6 +67,7 @@ $app->singleton(
 //     'auth' => App\Http\Middleware\Authenticate::class,
      'admin.auth' => App\Http\Middleware\JwtMiddleware::class,
      'auth' => App\Http\Middleware\AuthMiddleware::class,
+     'allUsers' => App\Http\Middleware\AllUsersAuthMiddleware::class
  ]);
 
 /*

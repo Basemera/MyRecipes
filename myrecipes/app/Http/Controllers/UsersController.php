@@ -127,6 +127,7 @@ class UsersController extends Controller {
     public function getUserCategories($id) {
         return User::find($id)->categories;
     }
+
 }
 
 ?>

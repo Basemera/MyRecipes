@@ -37,7 +37,7 @@ class Category extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\hasmany
      */
     public function recipes() {
-        return $this->hasMany('App\Models\Recipes');
+        return $this->hasMany('App\Models\Recipe');
     }
 
 }

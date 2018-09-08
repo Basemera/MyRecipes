@@ -9,7 +9,7 @@ class Comments extends Model {
     protected $fillable = ['Comment'];
 
     public function recipe () {
-        return $this->belongsTo('App\Models\Recipes');
+        return $this->belongsTo('App\Models\Recipe');
     }
 
     public function commentor () {

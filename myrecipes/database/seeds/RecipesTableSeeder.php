@@ -11,7 +11,7 @@ class RecipesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Recipe::class, 50)->make()->each(function ($comment) {
+        factory(App\Models\Recipe::class, 50)->create()->each(function ($comment) {
         });
     }
 }

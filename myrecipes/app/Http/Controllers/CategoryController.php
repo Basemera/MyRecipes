@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Recipe;
 use Illuminate\Http\Request;
 
 
@@ -50,7 +51,10 @@ class CategoryController extends Controller {
         $categories = Category::where('user_id',$user_id)->first();
         return response()->json($categories, 200);
     }
-
+    public function getAllCategories() {
+            $categories = Category::all();
+        return response()->json($categories, 200);
+    }
     /**
      * Return details of a single category
      * @param $id
@@ -101,7 +105,6 @@ class CategoryController extends Controller {
         }
     }
     public function getAllCategoryRecipes($category_id) {
-
         return Category::find($category_id)->recipes;
     }
 }

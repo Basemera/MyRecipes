@@ -3,7 +3,7 @@
 
     use Illuminate\Database\Eloquent\Model;
 
-    class Recipes extends Model {
+    class Recipe extends Model {
         protected $table = 'recipes';
         protected $fillable = ['name', 'description'];
 
@@ -17,5 +17,9 @@
         public function scopeCategoryRecipes($query, $category_id)
         {
             return $query->where('category_id', $category_id);
+        }
+
+        public function comments() {
+            return $this->hasMany('App\Models\Comments');
         }
     }

@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Recipes;
+use App\Models\Recipe;
 use Illuminate\Http\Request;
 
 class RecipesController extends Controller {
@@ -21,11 +21,11 @@ class RecipesController extends Controller {
             'name' => 'required',
             'description' => 'required',
         ]);
-        $recipe = Recipes::CategoryRecipes($category_id)->where('name', strtolower($request->name))->first();
+        $recipe = Recipe::CategoryRecipes($category_id)->where('name', strtolower($request->name))->first();
         if ($recipe) {
             return response()->json('Name already taken. Please pick another one', 400);
         }
-        $new_recipe = new Recipes();
+        $new_recipe = new Recipe();
         $new_recipe->name = strtolower($request->name);
         $new_recipe->description = $request->description;
         $new_recipe->category_id = $category_id;
@@ -47,7 +47,7 @@ class RecipesController extends Controller {
             'description' => 'required',
         ]);
 
-        $recipe = Recipes::CategoryRecipes($category_id)->findorFail($recipe_id);
+        $recipe = Recipe::CategoryRecipes($category_id)->findorFail($recipe_id);
         if (!$recipe) {
             return response()->json('Recipe doesnot exist', 400);
         }
@@ -62,7 +62,7 @@ class RecipesController extends Controller {
      * @return \Illuminate\Http\JsonResponse
      */
     public function delete($category_id, $recipe_id) {
-        $recipe = Recipes::CategoryRecipes($category_id)->findorFail($recipe_id);
+        $recipe = Recipe::CategoryRecipes($category_id)->findorFail($recipe_id);
         $recipe->delete();
         return response()->json('Recipe deleted successfully', 200);
     }
@@ -74,7 +74,7 @@ class RecipesController extends Controller {
      * @return \Illuminate\Http\JsonResponse
      */
     public function getSingleRecipe($category_id, $recipe_id) {
-        $recipe = Recipes::findorFail($recipe_id);
+        $recipe = Recipe::findorFail($recipe_id);
         return response()->json($recipe, 200);
     }
 }

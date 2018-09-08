@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comments;
-use App\Models\Recipes;
+use App\Models\Recipe;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\helpers\currentUser;
@@ -28,7 +28,7 @@ class CommentsController extends Controller {
             'comment' => 'required',
         ]);
 
-        $recipe = Recipes::findOrFail($recipe_id);
+        $recipe = Recipe::findOrFail($recipe_id);
         $comment = new Comments();
         $comment->Comment = $request->comment;
         $comment->recipe_id = $recipe_id;

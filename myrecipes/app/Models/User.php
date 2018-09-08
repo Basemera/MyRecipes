@@ -42,7 +42,11 @@ class User extends Model
      * @return \Illuminate\Database\Eloquent\Relations\hasmany
      */
     public function categories() {
-        return $this->hasMany('App\Models\Category');
+        return $this->hasMany('App\Models\Category', 'user_id');
+    }
+
+    public function commentor() {
+        return $this->hasMany('App\Models\Comments');
     }
 
 }

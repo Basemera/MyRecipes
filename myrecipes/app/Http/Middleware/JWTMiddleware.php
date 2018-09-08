@@ -6,6 +6,7 @@ use Exception;
 use App\Models\User;
 use Firebase\JWT\JWT;
 use Firebase\JWT\ExpiredException;
+use Illuminate\Support\Facades\Hash;
 
 class JwtMiddleware
 {
@@ -35,7 +36,7 @@ class JwtMiddleware
                 'error' => 'User doesnot exist.'
             ], 400);
         }
-        if ($user->username == 'Phiona') {
+        if ($user->username == 'phiona') {
             $request->auth = $user;
             return $next($request);
         }

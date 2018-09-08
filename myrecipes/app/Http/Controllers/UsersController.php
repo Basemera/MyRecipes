@@ -99,6 +99,7 @@ class UsersController extends Controller {
             ], 400);
         }
         if (Hash::check($request->password, $user->password)) {
+
             return response()->json([
                 'token' => User::jwt($user)
             ], 200);

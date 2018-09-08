@@ -23,6 +23,7 @@ $router->group(['prefix'=>'/myrecipes',], function () use ($router) {
 $router->group(['prefix'=>'/myrecipes', 'middleware' => 'allUsers'], function () use ($router) {
     $router->get('/user/{id}/categories', 'UsersController@getUserCategories');
     $router->get('/user/{id}/category', 'CategoryController@getAllUserCategories');
+    $router->get('/user/{id}/categories', 'CategoryController@getAllCategories');
     $router->get('/user/{id}/category/{category_id}', 'CategoryController@getSingleCategory');
     $router->get('/user/{id}/category/{category_id}/recipes', 'CategoryController@getAllCategoryRecipes');
     $router->get('/user/{id}/category/{category_id}/recipes/{recipe_id}', 'RecipesController@getSingleRecipe');

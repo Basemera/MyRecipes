@@ -260,7 +260,6 @@ class UserControllerTest extends \TestCase {
         $response = json_decode($this->response->getContent());
         dd($response);
         $this->assertResponseStatus(200);
-//        $this->assertEquals('successfully deleted', $response);
 
     }
 

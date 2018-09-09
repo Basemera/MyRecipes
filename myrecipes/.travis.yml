@@ -1,33 +1,20 @@
-
-env:
-  global:
-    - CC_TEST_REPORTER_ID=25a6112d3e1079b3b8dc5f95d79d024e7a87abcd6e85f93a7457630166ef2f79
-
 language: php
 
 php:
   - 7.2
+
+services:
+  postgresql
 
 addons:
   postgresql: "10.4"
 
 before_script:
   - cp .env.travis .env
+  - psql -c 'create database myrecipes-test;' -U postgres
   - composer self-update
   - composer install --no-interaction
-
-before_install:
-  - composer self-update
-  - cp .env.travis .env
-  - psql -c 'create database myrecipes-test;' -U postgres
-
-install:
-  - composer require phpunit/phpunit:7.0.*
-  - composer install --dev
+  - php artisan migrate --seed
 
 script:
-  - php artisan migrate --seed
   - vendor/bin/phpunit
-
-after_script:
-  - php vendor/bin/coveralls -v

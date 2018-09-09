@@ -8,10 +8,26 @@ language: php
 php:
   - 7.2
 
+addons:
+  postgresql: "10.4"
+
 before_script:
   - cp .env.travis .env
   - composer self-update
   - composer install --no-interaction
 
+before_install:
+  - composer self-update
+  - cp .env.travis .env
+  - psql -c 'create database myrecipes-test;' -U postgres
+
+install:
+  - composer require phpunit/phpunit:7.0.*
+  - composer install --dev
+
 script:
+  - php artisan migrate --seed
   - vendor/bin/phpunit
+
+after_script:
+  - php vendor/bin/coveralls -v

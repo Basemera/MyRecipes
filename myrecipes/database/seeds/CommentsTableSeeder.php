@@ -11,7 +11,6 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        dd(App\Models\Recipe::all());
         factory(App\Models\Comments::class, 50)->create()->each(function ($user) {
         });
     }
